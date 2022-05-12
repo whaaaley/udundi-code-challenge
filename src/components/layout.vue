@@ -19,7 +19,7 @@
       <div class="content" :class="{'-open': !data.menu}">
         <h1>Explore</h1>
         <div class="more-details">
-          <button class="btn -more-details" @click="toggleMenu">+</button>
+          <button class="btn -more-details" @click="toggleMenu"></button>
           <span>More Details</span>
         </div>
       </div>
