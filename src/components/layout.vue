@@ -52,6 +52,25 @@
     }
   }
 
+  h1 {
+    padding: 0 0 0 30%;
+    font: 900 20vw/1 serif !important; // override bootstrap
+    width: 0; // overflow trick
+    margin: 0 0 -5%;
+    animation: fadein 2000ms;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translate(-15%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
   .content {
     opacity: 0;
     transition: opacity 250ms;
@@ -59,13 +78,6 @@
 
     &.-open {
       opacity: 1;
-    }
-
-    > h1 {
-      padding: 0 0 0 30%;
-      font: 900 20vw/1 serif !important; // override bootstrap
-      width: 0; // overflow trick
-      margin: 0 0 -5%;
     }
   }
 
