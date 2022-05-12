@@ -4,11 +4,19 @@
   import Menu from './menu.vue'
 
   const data = reactive({
-    menu: false
+    menu: false,
+    x: 0,
+    y: 0
   })
 
-  const toggleMenu = () => {
+  const closeMenu = () => {
+    data.menu = false
+  }
+
+  const toggleMenu = (event) => {
     data.menu = !data.menu
+    data.x = event.clientX
+    data.y = event.clientY
   }
 </script>
 
@@ -24,7 +32,7 @@
         </div>
       </div>
     </div>
-    <Menu :isOpen='data.menu' @toggleMenu='toggleMenu'/>
+    <Menu :isOpen='data.menu' :origin='[data.x, data.y]' @closeMenu='closeMenu'/>
   </div>
 </template>
 

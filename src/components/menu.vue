@@ -1,21 +1,57 @@
 
 <script setup>
-  import { defineProps } from 'vue'
+  import { ref, reactive, defineProps, onMounted } from 'vue'
 
   import Social from './social.vue'
   import Article from './article.vue'
 
   const props = defineProps({
-    isOpen: Boolean
+    isOpen: Boolean,
+    origin: Array,
+  })
+
+  const data = reactive({
+    top: 0,
+    left: 0
+  })
+
+  const contentRef = ref(null)
+
+  const updatePosition = () => {
+    const el = contentRef.value
+    const cs = getComputedStyle(el)
+
+    const paddingX = parseFloat(cs.paddingLeft);
+    const paddingY = parseFloat(cs.paddingTop);
+
+    const contentRect = el.getBoundingClientRect()
+
+    data.top = contentRect.y + paddingY
+    data.left = contentRect.x + paddingX
+  }
+
+  onMounted(() => {
+    updatePosition()
+  })
+
+  addEventListener('resize', () => {
+    updatePosition()
   })
 </script>
 
 <template>
   <div class="layer" :class="{'-click-through': !props.isOpen}">
     <div class="side" :class="{'-open': props.isOpen}"><!-- empty --></div>
-    <div class="content">
-      <div class="box" :class="{'-open': props.isOpen}">
-        <button class="-close" @click="$emit('toggleMenu')">×</button>
+    <div class="content" ref="contentRef">
+      <div
+        class="box"
+        :class="{'-open': props.isOpen}"
+        :style="{
+          '--x': props.origin[0] - data.left + 'px',
+          '--y': props.origin[1] - data.top + 'px'
+        }"
+      >
+        <button class="-close" @click="$emit('closeMenu')">×</button>
         <div class="inner" :class="{'-open': props.isOpen}">
           <!-- v-if to prevent content from overflowing when visibly hidden -->
           <!-- we can't v-if higher in the doc without breaking transitions -->
@@ -84,7 +120,7 @@
     padding: min(max(24px, 5vw), 64px);
     color: transparent;
     line-height: 2;
-    transform-origin: bottom left;
+    transform-origin: var(--x) var(--y);
     transition: transform 250ms;
     transform: scale(0);
     box-shadow: 0 12px 24px rgb(#000, 0.5);
