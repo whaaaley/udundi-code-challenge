@@ -87,8 +87,7 @@
     transform-origin: bottom left;
     transition: transform 250ms;
     transform: scale(0);
-    // box-shadow: 0 12px 24px rgb(#000, 0.5);
-    // height: 100vh;
+    box-shadow: 0 12px 24px rgb(#000, 0.5);
 
     &.-open {
       color: initial;
@@ -99,7 +98,6 @@
         position: absolute;
         top: 0;
         right: 0;
-        bottom: 0;
         left: 0;
       }
     }
