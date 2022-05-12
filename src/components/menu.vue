@@ -38,6 +38,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 1;
 
     &.-click-through {
       pointer-events: none;
