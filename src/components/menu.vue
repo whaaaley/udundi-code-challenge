@@ -38,7 +38,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
 
     &.-click-through {
       pointer-events: none;
@@ -70,6 +69,7 @@
   .content {
     display: grid;
     transition: padding 200ms;
+    z-index: 1;
 
     @media (min-width: 768px) {
       padding: {
