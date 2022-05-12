@@ -48,7 +48,7 @@
       border-radius: 24px;
       width: 48px;
       height: 48px;
-      background: #fff;
+      background: #fff url('/src/assets/Plus.svg') center / 24px no-repeat;
     }
   }
 
