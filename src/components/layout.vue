@@ -36,7 +36,7 @@
     grid: 1fr / 33.3% auto;
     height: 100vh;
     background: {
-      image: url('/src/assets/Coding-Challenge-Image.png');
+      image: url('/src/assets/Coding-Challenge-Image-Small-TinyPNG.png');
       size: cover;
     }
   }
