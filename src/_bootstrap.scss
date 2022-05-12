@@ -19,3 +19,16 @@
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // 6. Add additional custom code here
+
+// https://ishwar-rimal.medium.com/fixing-that-address-bar-issue-in-mobile-browsers-once-and-for-all-8c283fc88e56
+html {
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
