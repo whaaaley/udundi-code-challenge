@@ -17,6 +17,11 @@
     padding: 24px;
     white-space: nowrap;
     pointer-events: initial;
+
+    @media (max-width: (768px - 1px)) {
+      display: flex;
+      place-items: flex-end;
+    }
   }
 
   a {
