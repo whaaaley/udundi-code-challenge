@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <mask id="fb">
+      <rect fill="#fff" width="30" height="30"/>
+      <svg x='3' y='3'>
+        <path fill="#000"  d="M17.52 9H14V7c0-1.03.08-1.68 1.56-1.68h1.87V2.14c-.9-.1-1.82-.14-2.74-.14C11.98 2 10 3.66 10 6.7V9H7v4h3v9h4v-9h3.07l.45-4z"/>
+      </svg>
+    </mask>
+  </defs>
+  <rect fill="#000" width="30" height="30" mask="url(#fb)"/>
+</svg>
