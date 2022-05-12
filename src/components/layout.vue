@@ -42,7 +42,7 @@
   #layout {
     display: grid;
     grid: 1fr / 33.3% auto;
-    min-height: 100vh;
+    min-height: 100%;
     background: {
       image: url('/src/assets/Coding-Challenge-Image-Small-TinyPNG.png');
       size: cover;
